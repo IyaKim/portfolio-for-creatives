@@ -1,12 +1,5 @@
 :root {
-  --gradient: radial-gradient(
-    #ffffff,
-    #e82626,
-    #a19f9f,
-    #ff0000,
-    #323131,
-    #000000
-  );
+  --gradient: radial-gradient(hsl(54, 73%, 65%), #ef6969, #f1ebdd);
 }
 
 .gradient-animation {
