@@ -111,40 +111,40 @@
   /* Core Colours */
   --color-text-primary: #222;
   --color-text-secondary: #333;
-  --color-accent-primary: #f48686;
+  --color-accent-primary: #5200ff;
   --color-accent-secondary: #ff057c;
-  --color-overlay-primary: #f48686;
+  --color-overlay-primary: rgba(82, 0, 255, 0.5);
   --color-highlight: lemonchiffon;
   --color-fallback: #ff057c; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
-  --color-bg: #000000;
-  --color-bg-about: #000000;
-  --color-bg-footer: var(--color-gradient-hero);
-  --color-bg-holding-page: #f48686;
+  --color-bg: #fdfdfd;
+  --color-bg-about: #f5f5f5;
+  --color-bg-footer: #f5f5f5;
+  --color-bg-holding-page: rgba(82, 0, 255, 0.6);
   /* Headings */
-  --h1-color: #f48686;
-  --h2-color: #f48686;
-  --h3-color: #f48686;
-  --h4-color: #f48686;
-  --h5-color: #f48686;
-  --h6-color: #f48686;
+  --h1-color: #5200ff;
+  --h2-color: #5200ff;
+  --h3-color: #5200ff;
+  --h4-color: #5200ff;
+  --h5-color: #5200ff;
+  --h6-color: #5200ff;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
   --color-text-project-description: #222;
   --color-text-project-sidebar: #222;
-  --color-text-project-title: #f48686;
+  --color-text-project-title: #5200ff;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
-  --color-link: #f48686;
+  --color-link: #5200ff;
   --color-link-hover: #111;
-  --color-link-visited: #f48686;
+  --color-link-visited: #5200ff;
   /* Navigation */
-  --color-nav-link: #f48686;
+  --color-nav-link: #5200ff;
   --color-nav-link-hover: #321575;
-  --color-nav-arrow: #f48686;
+  --color-nav-arrow: #5200ff;
   --color-nav-arrow-hover: #000;
-  --color-nav-arrow-stroke: #f48686;
+  --color-nav-arrow-stroke: #5200ff;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
   --color-bg-full-width: #f5f5f5;
@@ -161,7 +161,7 @@
   /* Special Elements */
   --color-icon-heart: darkred;
   --color-text-holding-footer: #f8f8ff;
-  --color-bg-selection: #f48686;
+  --color-bg-selection: #5200ff;
   --color-shadow-stroke: rgba(0, 0, 0, 0.4);
   /* Assets */
   --image-noise-texture: url(/assets/temp/noise.svg);
@@ -211,8 +211,7 @@
 html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
-  cursor:
-    url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
+  cursor: url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
 
   /* TODO: Replace the URL above to add a custom cursor. 
      If you want to use the default browser cursor, just delete this line. */
@@ -284,7 +283,7 @@ svg {
 /* Puts the box on its own line and adds space underneath */
 .margin-bottom {
   display: block; /* Makes it a block so it stacks nicely */
-  margin-bottom: 2rem; /* Adds space below – helps with layout breathing room */
+  margin-bottom: 1rem; /* Adds space below – helps with layout breathing room */
 }
 
 .width-third,
@@ -309,7 +308,7 @@ svg {
 
 /* Centers your text (great for headings or buttons) */
 .centered-text {
-  text-align: left;
+  text-align: center;
 }
 
 /* ------------------------------ */
@@ -532,23 +531,6 @@ sup {
   max-width: 40ch; /* Optimal line length for readability (~40 characters) */
   text-wrap: balance; /* Prevents awkward line breaks (like elegant typography) */
   margin-inline: auto; /* Horizontally centers the text in its container */
-  background-image: linear-gradient(
-    rgba(234, 76, 76, 0.491),
-    rgba(255, 204, 204, 0.5)
-  );
-  padding-bottom: 2rem;
-  padding-top: 4rem;
-  padding-block-end: 10%;
-  padding-inline-start: 40%;
-  border-radius: 0.5rem;
-}
-.hero-headline-wrapper {
-  background-image:
-    linear-gradient(rgba(244, 173, 184, 0.5), rgba(248, 182, 182, 0.5)),
-    url("assets/PORTFOLIO IMG/selfportrait-kaylakim.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* Large project title — appears on individual project pages */
@@ -706,7 +688,7 @@ a.nav-link-primary:hover {
   width: 100%;
   min-height: 80vh; /* Takes up most of the screen height */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .hero-header {
   min-height: 6rem; /* Space reserved for logo + nav */
@@ -717,15 +699,15 @@ a.nav-link-primary:hover {
   flex-direction: column;
   justify-content: space-between;
   padding: var(--padding-small);
-  align-items: left;
+  align-items: center;
 }
 
 .nav-branding-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .nav-branding-item {
-  padding: var(--padding-jumbo);
+  padding: var(--padding-tiny);
 }
 
 .nav-branding-logo {
@@ -734,19 +716,19 @@ a.nav-link-primary:hover {
 }
 
 .logo {
-  fill: #f48686;
+  fill: red;
   transition: fill 0.3s ease-in-out;
 }
 .logo:hover {
-  fill: rgb(242, 221, 119);
+  fill: yellow;
 }
 
 .hero-headline-wrapper {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  flex: 4;
-  gap: 2rem;
+  flex: 1;
+  gap: 3rem;
   align-items: center;
   justify-content: center;
   padding: var(--padding-small);
@@ -754,12 +736,12 @@ a.nav-link-primary:hover {
 }
 
 .hero-icon {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .hero-footer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-direction: column;
   text-align: center;
 }
@@ -916,9 +898,7 @@ a.nav-link-primary:hover {
   background-color: var(
     --color-overlay-primary
   ); /* Background color of the overlay */
-  transition:
-    opacity var(--duration-normal),
-    visibility var(--duration-normal);
+  transition: opacity var(--duration-normal), visibility var(--duration-normal);
 }
 
 /* Hover effect on work page grid items */
@@ -979,7 +959,7 @@ a.nav-link-primary:hover {
 .about-grid {
   display: grid; /* Set to grid layout */
   grid-template-columns: 1fr; /* Single column layout for mobile and smaller screens */
-  grid-gap: balance; /* Space between grid items */
+  grid-gap: 3rem; /* Space between grid items */
   background: var(--color-bg-about); /* Background color for the section */
   padding: var(--padding-small); /* Padding around the grid */
   flex: 1; /* Flex-grow to take up available space */
@@ -1341,13 +1321,11 @@ a.nav-link-primary:hover {
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   padding: var(--padding-small);
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
-
-  background: black;
 }
 
 .error-page-animation {
@@ -1485,11 +1463,11 @@ to keep your styles reusable and consistent.
   }
 
   .nav-branding {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .nav-branding-logo {
-    width: 8rem;
+    width: 5rem;
     /* TODO: Adjust the width of the logo on large devices here. */
   }
 
@@ -1502,7 +1480,6 @@ to keep your styles reusable and consistent.
     padding-bottom: var(--padding-jumbo);
     padding-left: var(--padding-ultra);
     padding-right: var(--padding-ultra);
-    padding: var(--gradient);
   }
   .error-headline-wrapper {
     padding-top: var(--padding-small);
