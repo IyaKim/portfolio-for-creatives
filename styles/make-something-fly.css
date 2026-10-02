@@ -1,5 +1,6 @@
 .flier {
   pointer-events: none;
+  border-radius: 50%;
 }
 
 .flier > * {

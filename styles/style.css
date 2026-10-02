@@ -41,6 +41,8 @@
 /* Inter Font (great for readability and minimal design) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* Coral Pixel */
+@import url("https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap");
 /*
 
 /* 
@@ -106,57 +108,62 @@
 :root {
   /* Typography */
   --font-family-body: "Inter", sans-serif;
-  --font-family-heading: "Eczar", serif;
+  --font-family-heading: "Coral Pixels";
   --font-family-project-title: "Eczar", serif;
   /* Core Colours */
-  --color-text-primary: #222;
-  --color-text-secondary: #333;
-  --color-accent-primary: #5200ff;
-  --color-accent-secondary: #ff057c;
-  --color-overlay-primary: rgba(82, 0, 255, 0.5);
+  --color-text-primary: ;
+  --color-text-secondary: #d59e9e;
+  --color-accent-primary: #312121;
+  --color-accent-secondary: #f7c5dd;
+  --color-overlay-primary: rgba(46, 17, 17, 0.5);
   --color-highlight: lemonchiffon;
-  --color-fallback: #ff057c; /* Fallback color for glitch effect on 404 page */
+  --color-fallback: #f4c1c1; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
-  --color-bg: #fdfdfd;
-  --color-bg-about: #f5f5f5;
-  --color-bg-footer: #f5f5f5;
-  --color-bg-holding-page: rgba(82, 0, 255, 0.6);
+  --color-bg: #603333;
+  --color-bg-about: #ffdcdc;
+  --color-bg-footer: #603333;
+  --color-bg-holding-page: #28105c;
   /* Headings */
-  --h1-color: #5200ff;
-  --h2-color: #5200ff;
-  --h3-color: #5200ff;
-  --h4-color: #5200ff;
-  --h5-color: #5200ff;
-  --h6-color: #5200ff;
+  --h1-color: #ff6c6c;
+  --h2-color: #ff6c6c;
+  --h3-color: #ff6c6c;
+  --h4-color: #ff6c6c;
+  --h5-color: #603333;
+  --h6-color: #ff6c6c;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
-  --color-text-project-description: #222;
+  --color-text-project-description: #ffc4c4;
   --color-text-project-sidebar: #222;
-  --color-text-project-title: #5200ff;
+  --color-text-project-title: #ff6c6c;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
-  --color-link: #5200ff;
+  --color-link: #ff6c6c;
   --color-link-hover: #111;
-  --color-link-visited: #5200ff;
+  --color-link-visited: #ff6c6c;
   /* Navigation */
-  --color-nav-link: #5200ff;
+  --color-nav-link: #ff6c6c;
   --color-nav-link-hover: #321575;
-  --color-nav-arrow: #5200ff;
+  --color-nav-arrow: #ff6c6c;
   --color-nav-arrow-hover: #000;
-  --color-nav-arrow-stroke: #5200ff;
+  --color-nav-arrow-stroke: #ff6c6c;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
   --color-bg-full-width: #f5f5f5;
   --color-bg-project-description: #f5f5f5;
-  --color-bg-sidebar-project: orangered;
+  --color-bg-sidebar-project: rgb(68, 35, 35);
   --color-bg-sidebar-work: lemonchiffon;
-  --color-gradient-hero: linear-gradient(90deg, #ff00ff, #00ffff);
-  --color-gradient-project-details: linear-gradient(-225deg, #ff057c 0%, #8d0b93 50%, #321575 100%);
+  --color-gradient-hero: linear-gradient(90deg, #fbdfdf, #ec6565);
+  --color-gradient-project-details: linear-gradient(
+    -225deg,
+    #fec9e2 0%,
+    #f4af81 50%,
+    #f87676 100%
+  );
   /* Special Elements */
   --color-icon-heart: darkred;
   --color-text-holding-footer: #f8f8ff;
-  --color-bg-selection: #5200ff;
+  --color-bg-selection: oklch(86.572% 0.11822 90.846 / 0.613);
   --color-shadow-stroke: rgba(0, 0, 0, 0.4);
   /* Assets */
   --image-noise-texture: url(/assets/temp/noise.svg);
@@ -206,7 +213,8 @@
 html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
-  cursor: url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
+  cursor:
+    url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
 
   /* TODO: Replace the URL above to add a custom cursor. 
      If you want to use the default browser cursor, just delete this line. */
@@ -234,7 +242,9 @@ body {
 /* ------------------------------- */
 
 ::selection {
-  background: var(--color-bg-selection); /* Uses your custom color for highlighted text */
+  background: var(
+    --color-bg-selection
+  ); /* Uses your custom color for highlighted text */
 }
 
 /* ---------------------------------------- */
@@ -245,7 +255,7 @@ body {
 /* Make all images and SVGs scale nicely */
 img,
 svg {
-  max-width: 100%; /* Keeps the image from getting too big */
+  max-width: 60%; /* Keeps the image from getting too big */
   height: auto; /* Keeps the image’s original proportions */
   vertical-align: top; /* Removes little gaps under images (from line-height) */
   object-fit: contain; /* Optional: Makes sure the whole image fits inside its box */
@@ -449,6 +459,7 @@ h1 {
   font-family: var(--font-family-heading);
   line-height: 1.2;
   margin-bottom: 1rem;
+  margin-top: 4rem;
   color: var(--h1-color);
 }
 
@@ -556,16 +567,16 @@ sup {
 
 .highlight-gradient {
   background: var(--color-gradient-hero);
-  -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
 }
 
 /* 📂 Project grid title — used in grid view (like a portfolio gallery) */
 .work-grid-project-title {
-  font-size: 2.875rem;
+  font-size: 2rem;
   color: var(--color-text-work-grid-title);
   text-wrap: balance;
+  padding: var(--padding-small);
 }
 
 /* 🏷️ Project category label — displays the type or role of the project */
@@ -684,40 +695,71 @@ a.nav-link-primary:hover {
   flex-direction: column;
 }
 .hero-header {
-  min-height: 6rem; /* Space reserved for logo + nav */
+  min-height: 3rem; /* Space reserved for logo + nav */
+  max-height: 5rem;
+  background-image: url("../assets/branding-images/eyeball.gif");
+  background-repeat: repeat;
+  vertical-align: top; /* Removes little gaps under images (from line-height) */
+  object-fit: cover; /* Optional: Makes sure the whole image fits inside its box */
+  background-size: 3%;
+  padding: var(--padding-medium);
+  transform: rotate(-8deg);
 }
 
 .nav-branding {
+  font-size: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: var(--padding-small);
-  align-items: center;
 }
 
 .nav-branding-group {
+  background-color: rgb(244, 231, 189);
   display: flex;
   flex-direction: row;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding: var(--padding-small);
+  justify-content: space-evenly;
+  flex-grow: 6;
+  max-height: 4rem;
+  transform: skew(-8deg);
+  align-items: baseline;
 }
 .nav-branding-item {
-  padding: var(--padding-tiny);
+  flex-grow: 2;
+  flex-shrink: 4;
+  max-height: 4rem;
 }
 
 .nav-branding-logo {
-  width: 3rem;
+  width: 4rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: flex-start;
+  min-height: 3rem;
+  max-height: 4rem;
+  color: #ebedf0;
   /* TODO: Adjust the width of the logo on mobile devices here */
 }
 
 .hero-headline-wrapper {
   width: 100%;
+  height: 16rem;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
-  padding: var(--padding-small);
+  justify-content: space-evenly;
+  padding: var(--padding-medium);
   text-align: center; /* Keeps text centered */
+  background-image: url("../assets/branding-images/ground-background-mobile.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .hero-icon {
@@ -726,15 +768,17 @@ a.nav-link-primary:hover {
 
 .hero-footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   text-align: center;
+  padding: var(--gap-jumbo);
 }
 
 .hero-footer-navigation {
+  font-size: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: var(--padding-small);
 }
 
@@ -761,8 +805,9 @@ a.nav-link-primary:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-full-width); /* Background color for full-width sections */
-  margin-bottom: 1rem;
+  background: var(
+    --color-bg-full-width
+  ); /* Background color for full-width sections */
 }
 
 .full-width-headline-wrapper {
@@ -808,6 +853,7 @@ a.nav-link-primary:hover {
 
 /* Work wrapper (takes up available space) */
 .main-work-section {
+  /* background: #000; */
   flex: 1;
 }
 
@@ -815,13 +861,17 @@ a.nav-link-primary:hover {
 .portfolio,
 .project-wrapper,
 .work-sidebar-wrapper {
-  padding: var(--padding-tiny); /* Padding to keep content from touching edges */
+  padding: var(
+    --padding-tiny
+  ); /* Padding to keep content from touching edges */
 }
 
 /* Work Sidebar on Mobile */
 .work-sidebar {
   width: 100%;
-  background: var(--color-bg-sidebar-work); /* Background color for the sidebar */
+  background: var(
+    --color-bg-sidebar-work
+  ); /* Background color for the sidebar */
 }
 
 /* Main Work Area with Sidebar on Mobile */
@@ -832,7 +882,10 @@ a.nav-link-primary:hover {
 /* Defining the work page grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive grid */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Creates a responsive grid */
   grid-gap: 1rem; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
 }
@@ -871,7 +924,9 @@ a.nav-link-primary:hover {
   align-items: center;
   flex-direction: column;
   padding: var(--padding-small);
-  background-color: var(--color-overlay-primary); /* Background color of the overlay */
+  background-color: var(
+    --color-overlay-primary
+  ); /* Background color of the overlay */
   transition:
     opacity var(--duration-normal),
     visibility var(--duration-normal);
@@ -971,7 +1026,7 @@ a.nav-link-primary:hover {
 .footer-global {
   display: grid;
   grid-template-columns: 1fr; /* Single column layout */
-  grid-gap: 3rem; /* Consistent spacing between sections */
+  grid-gap: 1rem; /* Consistent spacing between sections */
   min-height: auto; /* Allows footer to expand based on content, no fixed height */
   background: var(--color-bg-footer); /* Using CSS variable for theming */
   padding: var(--padding-small); /* Internal spacing */
@@ -1031,6 +1086,10 @@ a.nav-link-primary:hover {
 .footer-item {
   line-height: 1.2; /* Consistent line height for footer items to improve spacing */
   margin-bottom: 0.25rem;
+}
+.footer-item-hidden {
+  color: #603333;
+  font-size: 20px;
 }
 
 /* ------------------------------- */
@@ -1167,7 +1226,9 @@ a.nav-link-primary:hover {
 .project-details {
   width: 100%;
   padding: var(--padding-small);
-  background: var(--color-gradient-project-details); /* TODO: Remove gradient background if you prefer a simpler design */
+  background: var(
+    --color-gradient-project-details
+  ); /* TODO: Remove gradient background if you prefer a simpler design */
 }
 
 /* Previous/Next Arrow Styles */
@@ -1272,7 +1333,9 @@ a.nav-link-primary:hover {
 
 .holding-page-copyright {
   font-size: 0.8rem; /* Smaller font size for copyright text */
-  color: var(--color-text-holding-footer); /* Custom color for the footer text */
+  color: var(
+    --color-text-holding-footer
+  ); /* Custom color for the footer text */
   margin-bottom: 0; /* Removes default margin from the bottom of the copyright text */
 }
 
@@ -1298,10 +1361,13 @@ a.nav-link-primary:hover {
   padding: var(--padding-small);
   text-align: center;
   margin: 0 auto;
+  background-image: url(../assets/branding-images/eyeball.gif);
+  background-repeat: repeat;
+  background-size: 5%;
 }
 
 .error-page-animation {
-  width: 25rem;
+  width: 40rem;
 }
 
 /*
@@ -1445,6 +1511,7 @@ to keep your styles reusable and consistent.
 
   .hero {
     min-height: 100vh;
+    max-height: max-content;
   }
 
   .hero-headline-wrapper {
@@ -1467,7 +1534,7 @@ to keep your styles reusable and consistent.
   /* Work Page Grid for Large Devices */
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
   }
 
@@ -1617,6 +1684,15 @@ to keep your styles reusable and consistent.
   .work-details {
     width: 75%;
   }
+
+  .hero-headline-wrapper {
+    height: 70vh;
+    background-image: url("../assets/branding-images/hero-headline-wrapper.jpg");
+    background-size: cover;
+  }
+  .hero-footer-navigation {
+    font-size: 4rem;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up)*/
@@ -1625,7 +1701,7 @@ to keep your styles reusable and consistent.
   /* TODO: Add styles here for X-large devices. */
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -1635,7 +1711,7 @@ to keep your styles reusable and consistent.
   /* TODO: Add styles here for XX-large devices. */
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 }
 

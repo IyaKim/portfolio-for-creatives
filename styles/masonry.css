@@ -22,7 +22,7 @@
 .masonry-item {
   margin-bottom: 2rem;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: row;
 }
 
 /* 🖼️ Image hover effects
