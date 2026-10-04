@@ -113,9 +113,9 @@
   /* Core Colours */
   --color-text-primary: ;
   --color-text-secondary: #d59e9e;
-  --color-accent-primary: #312121;
+  --color-accent-primary: #f44772;
   --color-accent-secondary: #f7c5dd;
-  --color-overlay-primary: rgba(46, 17, 17, 0.5);
+  --color-overlay-primary: rgba(202, 40, 40, 0.5);
   --color-highlight: lemonchiffon;
   --color-fallback: #f4c1c1; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
@@ -255,7 +255,7 @@ body {
 /* Make all images and SVGs scale nicely */
 img,
 svg {
-  max-width: 60%; /* Keeps the image from getting too big */
+  max-width: 100%; /* Keeps the image from getting too big */
   height: auto; /* Keeps the image’s original proportions */
   vertical-align: top; /* Removes little gaps under images (from line-height) */
   object-fit: contain; /* Optional: Makes sure the whole image fits inside its box */
@@ -736,9 +736,8 @@ a.nav-link-primary:hover {
 }
 
 .nav-branding-logo {
-  width: 4rem;
-  flex-grow: 1;
-  flex-shrink: 1;
+  width: 3rem;
+  flex-shrink: 2;
   align-self: flex-start;
   min-height: 3rem;
   max-height: 4rem;
@@ -757,6 +756,16 @@ a.nav-link-primary:hover {
   justify-content: space-evenly;
   padding: var(--padding-medium);
   text-align: center; /* Keeps text centered */
+  /* background-image: url("../assets/branding-images/ground-background-mobile.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;*/
+}
+.hero-headline {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: var(--color-accent-primary);
+  text-wrap: balance; /* Prevents awkward line breaks (like elegant typography) */
+  margin-inline: auto; /* Horizontally centers the text in its container */
   background-image: url("../assets/branding-images/ground-background-mobile.jpg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -1427,8 +1436,16 @@ to keep your styles reusable and consistent.
 
 /* Medium devices (tablets, 768px and up) */
 
-@media (min-width: 768px) {
+@media (min-width: 764px) and (max-width: 991px) {
   /* TODO: Adjust  layout for tablets */
+  .hero-headline-wrapper {
+    background-image: url("../assets/branding-images/hero-headline-wrapper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .hero-headline {
+    background-image: none; /* Removes the background image on tablets */
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -1502,16 +1519,22 @@ to keep your styles reusable and consistent.
 
   .nav-branding {
     flex-direction: row;
+    height: auto;
   }
 
   .nav-branding-logo {
-    width: 5rem;
+    width: 3rem;
+    height: auto;
     /* TODO: Adjust the width of the logo on large devices here. */
   }
 
   .hero {
     min-height: 100vh;
     max-height: max-content;
+  }
+
+  .hero-headline {
+    background-image: none; /* Removes the background image on larger screens */
   }
 
   .hero-headline-wrapper {
@@ -1682,7 +1705,6 @@ to keep your styles reusable and consistent.
   /* Main Work Area on Large Devices */
 
   .work-details {
-    width: 75%;
   }
 
   .hero-headline-wrapper {
@@ -1691,7 +1713,7 @@ to keep your styles reusable and consistent.
     background-size: cover;
   }
   .hero-footer-navigation {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 }
 
@@ -1713,6 +1735,11 @@ to keep your styles reusable and consistent.
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
+}
+
+.tablet-landscape {
+  min-width: 768px;
+  max-width: 991px;
 }
 
 /*
