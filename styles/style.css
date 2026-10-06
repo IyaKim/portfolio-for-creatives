@@ -579,6 +579,17 @@ sup {
 
 /* 📂 Project grid title — used in grid view (like a portfolio gallery) */
 .work-grid-project-title {
+  /* start iPhone 11 alignment fix */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+
+  /* end iPhone alignment fix */
+
   font-size: 2rem;
   color: var(--color-text-work-grid-title);
   text-wrap: balance;
