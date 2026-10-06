@@ -706,7 +706,7 @@ a.nav-link-primary:hover {
   background-repeat: repeat;
   background-size: 3%;
   vertical-align: top; /* Removes little gaps under images (from line-height) */
-  transform: rotate(-8deg);
+  /* transform: rotate(-8deg); */
   /* overflow: hidden; */
 }
 
