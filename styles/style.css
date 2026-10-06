@@ -910,9 +910,14 @@ a.nav-link-primary:hover {
   width: 100%;
   height: auto;
   position: relative; /* Needed to position the overlay */
+  display: block; /* 🔥 CRITICAL FIX: Forces Chrome to see the link as a solid block anchor */
 }
 /* Masonry Overlay Text */
 .overlay-container:hover .overlay {
+  opacity: 1;
+}
+/* Hover State Trigger */
+.overlay-container:hover .project-details-overlay {
   opacity: 1;
 }
 
@@ -952,10 +957,32 @@ a.nav-link-primary:hover {
   opacity: 1; /* Set opacity on hover */
 }
 
-/* Optional container for future overlay customization */
+/* Masonry Overlay Text Container */
 .project-details-overlay {
-  /* Placeholder: no custom styles yet */
-  background: hotpink;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Spans the exact dimensions of the project image */
+
+  /* Modern Centering (No transforms needed) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Dead-centers vertically */
+  align-items: center; /* Dead-centers horizontally */
+
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(
+    255,
+    105,
+    180,
+    0.8
+  ); /* Updated your hotpink placeholder to be slightly transparent */
+
+  /* Smooth Hover Mechanics */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /*
