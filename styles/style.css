@@ -87,6 +87,9 @@
 /* File for adding accordion functionality to expand/collapse content sections */
 @import url("accordian.css");
 
+/* File to style audio player */
+@import url("audio.css");
+
 /* 
 ██    ██  █████  ██████  ██  █████  ██████  ██      ███████ ███████ 
 ██    ██ ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██      ██      
