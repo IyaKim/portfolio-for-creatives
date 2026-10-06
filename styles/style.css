@@ -943,6 +943,7 @@ a.nav-link-primary:hover {
 /* Optional container for future overlay customization */
 .project-details-overlay {
   /* Placeholder: no custom styles yet */
+  background: hotpink;
 }
 
 /*
