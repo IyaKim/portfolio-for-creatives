@@ -594,6 +594,7 @@ sup {
   color: var(--color-text-work-grid-title);
   text-wrap: balance;
   padding: var(--padding-small);
+  background: yellowgreen;
 }
 
 /* 🏷️ Project category label — displays the type or role of the project */
