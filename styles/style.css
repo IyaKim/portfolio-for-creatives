@@ -714,8 +714,7 @@ a.nav-link-primary:hover {
 }
 .hero-header {
   min-height: 5rem; /* Space reserved for logo + nav */
-  background: green;
-  padding: 1rem;
+
   vertical-align: top; /* Removes little gaps under images (from line-height) */
   width: 100%;
 }
@@ -725,7 +724,9 @@ a.nav-link-primary:hover {
   background-repeat: repeat;
   background-size: 3%;
   transform: rotate(-8deg);
-  padding: 4rem;
+  padding: var(--padding-medium);
+  width: 80%;
+  margin: 0 auto;
 }
 
 .nav-branding {
@@ -733,7 +734,6 @@ a.nav-link-primary:hover {
   flex-direction: column;
   padding: var(--padding-small);
   background-color: rgb(244, 231, 189);
-  padding: 5rem;
 }
 
 .nav-branding-group {

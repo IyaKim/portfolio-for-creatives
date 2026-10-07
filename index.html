@@ -214,13 +214,13 @@
 
     <!-- Shared header and footer -->
     <script>
-      fetch("includes/header-1.html")
+      fetch("includes/header.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-placeholder").innerHTML = data;
         });
 
-      fetch("includes/footer-1.html")
+      fetch("includes/footer.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer-placeholder").innerHTML = data;
@@ -228,10 +228,12 @@
             new Date().getFullYear();
         });
     </script>
+
     <!-- Bottom menu -->
     <div id="bottomMenu" class="bottomMenu hide">
       <a href="#">Back to top</a>
     </div>
+
     <script src="./js/bottom-menu.js" defer></script>
   </body>
 </html>
