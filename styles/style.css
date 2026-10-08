@@ -43,7 +43,9 @@
 
 /* Coral Pixel */
 @import url("https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap");
-/*
+
+/* Averia Sans Libre*/
+@import url("https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 /* 
 ██ ███    ███ ██████   ██████  ██████  ████████      ██████ ███████ ███████ 
@@ -113,9 +115,9 @@
 
 :root {
   /* Typography */
-  --font-family-body: "Inter", sans-serif;
+  --font-family-body: "Averia Sans Libre", sans-serif;
   --font-family-heading: "Coral Pixels";
-  --font-family-project-title: "Eczar", serif;
+  --font-family-project-title: "Averia Sans Libre", sans-serif;
   /* Core Colours */
   --color-text-primary: ;
   --color-text-secondary: #d59e9e;
