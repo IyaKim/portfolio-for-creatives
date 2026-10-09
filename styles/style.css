@@ -596,7 +596,6 @@ sup {
   color: var(--color-text-work-grid-title);
   text-wrap: balance;
   padding: var(--padding-small);
-  background: yellowgreen;
 }
 
 /* 🏷️ Project category label — displays the type or role of the project */
@@ -980,12 +979,7 @@ a.nav-link-primary:hover {
 
   text-align: center;
   box-sizing: border-box;
-  background: rgba(
-    255,
-    105,
-    180,
-    0.8
-  ); /* Updated your hotpink placeholder to be slightly transparent */
+  /* Updated your hotpink placeholder to be slightly transparent */
 
   /* Smooth Hover Mechanics */
   opacity: 0;
@@ -1441,10 +1435,9 @@ Use this section to style elements that are *unique to the Play page*.
 For common layout or effects, continue using the base utility classes
 to keep your styles reusable and consistent.
 */
-
+/* 
 .play-page {
-  /* Add page-specific layout or container styles here */
-}
+ Add page-specific layout or container styles here */
 
 /*
 
@@ -1743,8 +1736,9 @@ to keep your styles reusable and consistent.
 
   /* Main Work Area on Large Devices */
 
-  .work-details {
+  /* .work-details {
   }
+   */
 
   .hero-headline-wrapper {
     height: 70vh;
