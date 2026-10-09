@@ -93,20 +93,31 @@
     <div id="myID" class="bottomMenu hide">
       <a href="project-1.html">Previous Project</a>
     </div>
+    <!-- Shared footer -->
+    <div id="footer-placeholder"></div>
 
-    <script type="text/javascript">
-      myID = document.getElementById("myID");
+    <!-- Shared header and footer -->
+    <script>
+      fetch("includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
 
-      var myScrollFunc = function () {
-        var y = window.scrollY;
-        if (y >= 800) {
-          myID.className = "bottomMenu show";
-        } else {
-          myID.className = "bottomMenu hide";
-        }
-      };
-
-      window.addEventListener("scroll", myScrollFunc);
+      fetch("includes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+          document.getElementById("copyright-years").textContent +=
+            new Date().getFullYear();
+        });
     </script>
+
+    <!-- Bottom menu -->
+    <div id="bottomMenu" class="bottomMenu hide">
+      <a href="#">Back to top</a>
+    </div>
+
+    <script src="./js/bottom-menu.js" defer></script>
   </body>
 </html>

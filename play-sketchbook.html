@@ -36,32 +36,36 @@
   </head>
 
   <body class="play-page">
-    <section class="hero">
-      <header class="hero-header">
-        <ul class="nav-branding">
-          <li><a href="index.html" class="custom-navigation">Work</a></li>
-          <li class="nav-branding-logo">
-            <a href="index.html"
-              ><img
-                src="assets/branding-images/logo.svg"
-                alt="Describe your project"
-            /></a>
-          </li>
-          <li><a href="about.html" class="custom-navigation">About</a></li>
-        </ul>
-      </header>
-      <div class="hero-headline-wrapper">
-        <h1 class="hero-headline">
-          A
-          <span class="highlight-primary"><strong>masonry</strong></span> layout
-          with
-          <span class="highlight-gradient"><strong>Lightbox</strong></span> and
-          <span class="highlight-gradient"><strong>rotate</strong></span>
-          effects—perfect for a Sketchbook page for process work or a
-          <em>Work</em> page for illustrators!
-        </h1>
-      </div>
+       <!-- Shared header -->
+      <div id="header-placeholder"></div>
+      <div class="hero-headline-wrapper"></div>
+      <div class="hero-headline-wrapper"></div>
     </section>
+          <section class="full-width-section">
+        <div class="full-width-headline-wrapper">
+          <h1 class="h1-full-width">✏️ The Sketchbook page</h1>
+          <p class="max-text-width">
+            A Sketchbook page is where you share the early stages of your
+            creative process. It’s a place for your rough sketches, wireframes,
+            brainstorming notes, and conceptual designs—ideas that haven’t been
+            polished yet but are essential to understanding your thought
+            process.
+          </p>
+          <p class="max-text-width">
+            This page shows how you think, problem-solve, and approach design
+            challenges.
+          </p>
+          <p class="max-text-width">
+            Clients and collaborators will appreciate seeing the evolution of
+            your ideas and the steps you take to refine and perfect them.
+          </p>
+          <p class="max-text-width">
+            Use the Sketchbook page to highlight your creative journey and
+            demonstrate your ability to turn concepts into tangible design
+            solutions.
+          </p>
+        </div>
+      </section>
     <main class="main-work-section">
       <section class="portfolio">
         <ul class="masonry-grid padding-jumbo">
@@ -238,81 +242,31 @@
           </li>
         </ul>
       </section>
-      <section class="full-width-section">
-        <div class="full-width-headline-wrapper">
-          <h1 class="h1-full-width">✏️ The Sketchbook page</h1>
-          <p class="max-text-width">
-            A Sketchbook page is where you share the early stages of your
-            creative process. It’s a place for your rough sketches, wireframes,
-            brainstorming notes, and conceptual designs—ideas that haven’t been
-            polished yet but are essential to understanding your thought
-            process.
-          </p>
-          <p class="max-text-width">
-            This page shows how you think, problem-solve, and approach design
-            challenges.
-          </p>
-          <p class="max-text-width">
-            Clients and collaborators will appreciate seeing the evolution of
-            your ideas and the steps you take to refine and perfect them.
-          </p>
-          <p class="max-text-width">
-            Use the Sketchbook page to highlight your creative journey and
-            demonstrate your ability to turn concepts into tangible design
-            solutions.
-          </p>
-        </div>
-      </section>
     </main>
+    <!-- Shared footer -->
+    <div id="footer-placeholder"></div>
+    <!-- Shared header and footer -->
+    <script>
+      fetch("includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
 
-    <ul class="footer-global">
-      <li class="footer-tagline">
-        <h2>Let's Connect!</h2>
-        <p>
-          Feel free to reach out with any questions, collaborations, or just to
-          chat about design.
-        </p>
-      </li>
-      <li class="footer-highlights">
-        <h2>Awards & Recognition</h2>
-        <ul class="footer-awards-list">
-          <li class="footer-item">
-            <a href="#">Dean’s List – Year or Term</a>
-          </li>
-          <li class="footer-item">
-            <a href="#">Your Award – Name of Student Award and Year</a>
-          </li>
-          <li class="footer-item">
-            <a href="#">Honourable Mention – Project or Competition Name</a>
-          </li>
-          <li class="footer-item">
-            <a href="#">Other Recognition or Accolade</a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="footer-contact-social">
-        <h2>Contact & Social</h2>
-        <ul class="footer-socials-list">
-          <li class="footer-item"><a href="#">Insta</a></li>
-          <li class="footer-item"><a href="#">LinkedIn</a></li>
-          <li class="footer-item"><a href="#">Behance</a></li>
-        </ul>
-      </li>
-
-      <li class="footer-full-width">
-        <p><a href="#top">Smooth scroll to the top</a></p>
-        <p class="footer-fineprint">
-          &copy; <span id="copyright-years">2020-</span>. Hand crafted with
-          <span class="heart">❤</span>
-          by Kayla Kim.
-        </p>
-        <script>
+      fetch("includes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
           document.getElementById("copyright-years").textContent +=
             new Date().getFullYear();
-        </script>
-      </li>
-    </ul>
-    <script src="./lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        });
+    </script>
+
+    <!-- Bottom menu -->
+    <div id="bottomMenu" class="bottomMenu hide">
+      <a href="#">Back to top</a>
+    </div>
+
+    <script src="./js/bottom-menu.js" defer></script>
   </body>
 </html>
